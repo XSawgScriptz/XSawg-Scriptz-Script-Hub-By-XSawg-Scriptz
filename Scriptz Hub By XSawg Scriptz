@@ -1,0 +1,157 @@
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local window = kavoUi.CreateLib("Scriptz X","BloodTheme")
+
+---Tabs
+
+local Tab1 = window:NewTab("Main")
+
+local Tab1Section = Tab1:NewSection("Main")
+
+local Tab2 = window:NewTab("Scriptz")
+
+local Tab2Section = Tab2:NewSection("Scriptz World")
+
+local Tab3 = window:NewTab("Credits")
+
+local Tab3Section = Tab3:NewSection("Made by XSawg Scriptz")
+
+---Buttons
+
+Tab1Section:NewButton("Safe Platform","Safe place",function()
+
+-- FE SPEED
+
+Local = game:GetService('Players').LocalPlayer
+
+Char  = Local.Character
+
+touched,tpdback = false, false
+
+Local.CharacterAdded:connect(function(char)
+
+    if script.Disabled ~= true then
+
+        wait(.25)
+
+        loc = Char.HumanoidRootPart.Position
+
+        Char:MoveTo(box.Position + Vector3.new(0,.5,0))
+
+    end
+
+end)
+
+game:GetService('UserInputService').InputBegan:connect(function(key)
+
+    if key.KeyCode == Enum.KeyCode.Equals then
+
+        if script.Disabled ~= true then
+
+            script.Disabled = true
+
+            print'you may re-execute'
+
+        end
+
+    end
+
+end)
+
+box = Instance.new('Part',workspace)
+
+box.Anchored = true
+
+box.CanCollide = true
+
+box.Size = Vector3.new(10,1,10)
+
+box.Position = Vector3.new(0,10000,0)
+
+box.Touched:connect(function(part)
+
+    if (part.Parent.Name == Local.Name) then
+
+        if touched == false then
+
+            touched = true
+
+            function apply()
+
+                if script.Disabled ~= true then
+
+                    no = Char.HumanoidRootPart:Clone()
+
+                    wait(.25)
+
+                    Char.HumanoidRootPart:Destroy()
+
+                    no.Parent = Char
+
+                    Char:MoveTo(loc)
+
+                    touched = false
+
+                end end
+
+            if Char then
+
+                apply()
+
+            end
+
+        end
+
+    end
+
+end)
+
+repeat wait() until Char
+
+loc = Char.HumanoidRootPart.Position
+
+Char:MoveTo(box.Position + Vector3.new(0,.5,0))
+
+end)
+
+Tab2Section:NewButton("Keyboard V1","KEYBOARD V1",function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+end)
+
+Tab2Section:NewButton("Fly Script","Fly like a bird",function()
+
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+
+end)
+
+Tab1Section:NewSlider("Speed", "IShowSpeed", 250, 120, function(v) -- 500
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+
+end)
+
+Tab1Section:NewSlider("JumpPower", "Jump high", 250, 120, function(v) -- 500
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+
+end)
+
+local Tab2Section = Tab1:NewSection("Towers")
+
+Tab2Section:NewButton("Tower of hell","Lets Pray for Tiahh get better soon",function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/garfield%20hub", true))()
+
+end)
+
+Tab2Section:NewButton("Tower of mistery","Lets Pray for Tiahh get better soon",function()
+
+repeat wait() until game.Players.LocalPlayer.Character
+
+url = "https://raw.githubusercontent.com/dqvh/Fe9z/main/Tower%20Of%20Misery.txt"
+
+loadstring(game:HttpGet(url))()
+
+end)
